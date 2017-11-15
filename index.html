@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale =1.0">
+		<title>Farbkreis</title>
+	    <link rel="stylesheet" type="text/css" href="styleSheets/style.css">
+		<script src=""></script>
+	</head>
+	<body>
+		<noscript>
+			Es ist kein JavaScript aktiv!
+		</noscript>
+		
+		<div id="main"> 
+		 <img id="Home" src="https://image.flaticon.com/icons/png/512/25/25694.png" alt="Home">
+		  <div id="header"><h1>Farbkreis</h1></div>
+		  <nav id="nav">
+		    <ul>
+		      <li> <a href="https://github.com/sleepypioneer" target="blank" > <img class="logo" src="https://pbs.twimg.com/media/BeM2XAiCQAA91O-.png:large" alt="gitHub logo"> <h4 class="socialNav"> Visit me on GitHub </h4></a> </li>
+		      <li> <a href="https://twitter.com/sleepypioneer" target="blank"> <img class="logo" src="https://image.freepik.com/free-icon/twitter-logo_318-40459.jpg" alt="Twitter logo"> <h4 class="socialNav"> Follow me on Twitter </h4></a> </li>
+		      <li> <a href="https://de.linkedin.com/in/jessica0greene" target="blank"> <img class="logo" src="https://image.freepik.com/free-icon/linked-in-logo-on-black-square-background_318-40265.jpg" alt="Linked in logo"> <h4 class="socialNav"> Add me on Linked in </h4></a> </li>
+		    </ul>
+	    
+	    </nav>
+	    <div id="content">
+  	    <div id="farbkreis">
+  	      <img src="http://www.roke.de/images/Farbkreis.gif" class="clip-circle" alt="Farbkreis" usemap="#Map">
+    			<map name="Map" id="Map">
+    			  <area shape="poly" coords="294, 242, 394, 71, 465, 142, 493, 241" href="seiten/rot.html" alt="Rot">
+    			  <area shape="poly" coords="295, 246, 492, 245, 470, 336, 394, 415" href="seiten/magenta.html" alt="Magenta">
+    			  <area shape="poly" coords="291, 248, 391, 416, 289, 443, 192, 417" href="seiten/blau.html" alt="Blau">
+    			  <area shape="poly" coords="188, 416, 115, 343, 89, 244, 286, 245" href="seiten/cyan.html" alt="Cyan">
+    			  <area shape="poly" coords="287, 240, 88, 240, 110, 154, 188, 70" href="seiten/gruen.html" alt="Grün">
+    			  <area shape="poly" coords="291, 238, 193, 68, 288, 43, 390, 70" href="seiten/gelb.html" alt="Gelb">
+    			</map>
+  	    </div>
+	      <div id="erklarung1">
+	        <p>
+	          Purgantur cupientem mo considero me occurrere. Priusquam voluntate ero dum jam fal cognoscam alligatus efficitur.  </p>
+	      </div>
+	      <div id="erklarung2">
+	          <p>
+	            Pendeant existens refertur me to ob. Mutetur et is an ad petitis dicamne laborio. Dum cernitur eam cum contendo ita credenda. </p>
+	      </div>
+			
+			</div>
+		</div>
+	
+	
+	
+    <script>
+      coords1=[490,403,657,119,775,236,821,402];
+      coords2=[492,410,820,409,784,560,656,691];
+      coords3=[485,413,652,694,481,739,320,695];
+      coords4=[314,693,192,571,148,407,477,409] ;
+      coords5=[478,400,147,400,183,257,313,117] ;
+      coords6=[485,397,321,114,480,72,650,116];
+      function dividePercent(array, percent) {
+        newArray = [];
+      	for(i=0; i < array.length; i++){
+      	  num = array[i]*(percent/100);
+      	  n = Math.round(num);
+      		newArray.push(n);
+      	}
+      	return newArray;
+      }
+      dividePercent(coords6, 80);
+    </script>  	
+	</body>
+</html>	

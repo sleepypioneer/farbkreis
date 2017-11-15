@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gelb</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		body {
+			background-color: #FFFF00;
+		}
+	</style>
+	
+</head>
+
+<body>
+    <div>
+    <div>
+      <p> ersatz text </p>
+			<button onclick="hello();"> CLICK ME </button>
+			<p id="message"></p>
+    </div>
+    <div>
+      <a href="../index.html"> ZURÜCK </a>
+    </div>
+		<h3>Meine Homepage</h3>
+  </div>
+		
+		<script>
+		function hello(){
+			var name = "";
+			janein = confirm("Möchten Sie mir Ihren Namen verraten?");
+			if (janein == true)
+				name = prompt("Wie ist Ihr Name?", "");
+		
+			if ((name == "") || (name == null)) {
+				alert("Name unbekannt.");
+				name = "";
+			}
+			var x = document.getElementById("message");
+			x.innerHTML = "Hallo " + name + ",<br>willkommen auf meiner Webseite.";
+		}
+	</script>
+</body>
+</html>
