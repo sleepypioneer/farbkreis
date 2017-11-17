@@ -73,8 +73,8 @@ img {
 
 #Home {
   position: fixed;
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -84,16 +84,47 @@ img {
 
 /* Layout Styles */
 
-#main {
+/* container */
+.main {
   margin:auto;
   width: 90%;
   text-align: center;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 10% auto 10% ;
+  grid-template-rows: 20% auto 20%;
+  grid-template-areas: 
+    "margin1 header margin2"
+    "margin1 content margin2"
+    "margin1 footer margin2";
+  grid-column-gap: 2%;
+  justify-items: center;
+  align-items: stretch;
+  align-content: stretch;
 }
 
-#content {
-  width: 80%;
+.header {
+  grid-area: header;
+}
+
+.margin1 {
+  grid-area: margin1;
+}
+
+.margin2 {
+  grid-area: margin2;
+}
+
+.content {
+  width: 100%;
   height: auto;
   margin:auto;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+  
 }
 
 #farbkreis {
