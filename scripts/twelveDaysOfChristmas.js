@@ -12,9 +12,9 @@ var DaysOfChristmas = ["A Partridge in a Pear Tree",
                        "12 Drummers Drumming"
                        ];
 var day;
-var date = new Date(2017,11,25);
+var date = new Date(2017,11,28);
 var g = ""+ date.getMonth() + date.getDate() + "";
-
+console.log(g);
 switch(parseInt(g)) {
     case 1125:
         value = 0;
@@ -58,40 +58,40 @@ switch(parseInt(g)) {
 
 
 switch(value) {
-    case 1:
+    case 0:
         day = "first";
         break;
-    case 2:
+    case 1:
         day = "second";
         break;
-    case 3:
+    case 2:
         day = "third";
         break;
-    case 4:
+    case 3:
         day = "fourth";
         break;
-    case 5:
+    case 4:
         day = "fifth";
         break;
-    case 6:
+    case 5:
         day = "sixth";
         break;
-    case 7:
+    case 6:
         day = "seventh";
         break;
-    case 8:
+    case 7:
         day = "eighth";
         break;
-    case 9:
+    case 8:
         day = "ninth";
         break;
-    case 10:
+    case 9:
         day = "tenth";
         break;
-    case 11:
+    case 10:
         day = "eleventh";
         break;
-    case 12:
+    case 11:
         day = "twelfth";
         break;    
     default:
@@ -99,14 +99,30 @@ switch(value) {
 }
 
 
-function notChristmasMessage(){};
+function notChristmasMessage(){
+    console.log("It's not Christmas yet!");
+}
 
 //var christmas = 
 
-verse = [];
+ let verse = [];
 
-function createVerse(day){
-    verse.push(DaysOfChristmas[i]);
+function createVerse(){
+    var i,
+    DaysOfChristmas,
+    value,
+    verse;
+    if (value ===0){
+        verse.push(DaysOfChristmas[0]);
+    } else {
+        for(i=1; i > value; i +=1){
+            console.log(verse);
+            verse.push(DaysOfChristmas[i]);
+        }
+        //verse.push("and a Partridge in a Pear Tree.");   
+    }
+    console.log(verse);
 }
 
-console.log( "On the " + day + " of Christmas my true love sent to me:" + verse + " and a Partridge in a Pear Tree.")
+createVerse(day);
+console.log( "On the " + day + " of Christmas my true love sent to me: " + verse);
