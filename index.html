@@ -52,12 +52,30 @@
 			</div>
 			
 			<div class="footer">
-				
+				<h5>Join my mailing list</h5>
+				<form action="#" name="EmailAdress" onsubmit="testen();" value="EmailAddress" >
+					<input type="email" name="email" placeholder="Your Email">
+					<input type="submit" name="submit" value="join">
+				</form>
 			</div>
 			
 			<div class="margin2">
 			</div>
 		</div>
 		<script type="text/javascript" src="scripts/resizeImageMap.js"></script>
+		<script>
+			function testen() {
+				eingabe = document.EmailAdress.email.value;
+				console.log(eingabe.length);
+				if (eingabe.length == 0){
+					alert("Sie müssen etwas eingeben!");
+					document.EmailAdress.email.focus();
+					return false;
+				} else {
+					alert("Vielen Dank!");
+					return true;
+				}
+			}
+		</script>
 	</body>
 </html>	
