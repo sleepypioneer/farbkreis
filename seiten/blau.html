@@ -8,12 +8,21 @@
 <style type="text/css">
 body {
 	background-color: #00F;
+}
 
-.form {
+.enlarge {
 	padding: 20px;
 	margin: 20px;
 	display: block;
+}
 
+form{
+	margin: 10px;
+}
+
+.icon {
+	width: 20px;
+	height: 20px;
 }
 
 </style>
@@ -27,8 +36,8 @@ body {
 	  if ((art == 2) && (faktor > 1))
 		faktor = faktor/2;
 
-	  document.images.zoombild.height = hoehe * faktor / 4;
-	  document.images.zoombild.width = breite * faktor / 4;
+	  document.images.zoomblau.height = hoehe * faktor / 4;
+	  document.images.zoomblau.width = breite * faktor / 4;
 	  document.getElementById("ausgabe").innerHTML = 25 * faktor;
 	  document.title = "Bildzoom " + (25 * faktor) +"%";
 	}
@@ -51,19 +60,18 @@ body {
 					<source src="../assets/video/diashow/diashow.ogv" type="video/ogg"></source>
 				</video>
 				
-				<audio preload controls preload autoplay>
+				<audio preload controls preload > <!--autoplay-->
 					<source src="../assets/audio/undertone/undertone.mp3" type="audio/mpeg"/>
 					<source src="../assets/audio/undertone/undertone.ogg" type="audio/ogg"/>
 				</audio>
-				<div class="form">
-					<form action="" name="scale">
-						<input type="button" value="++" onclick="enlarge(1);">
-						<input type="button" value="--" onclick="enlarge(2);">
-						<input type="text" name="size" size"30" readonly>
+				<div class="enlarge">
+					<form>
+						<a href="#" onClick="zoom(1);">++</a>
+						<a href="#" onClick="zoom(2);">--</a> [<span id="ausgabe">100</span>%]<p>
 					</form>
+					<img src="../assets/imgs/blau.jpg" border="10" width="300" height="300" name="zoomblau">
 				</div>
-					
-				<img src="../assets/imgs/blau.jpg" border="10" width="300" height="300" name="blau">
+				
 			</div>
 			
 			<div class ="margin2">
@@ -71,17 +79,10 @@ body {
 			<div class ="footer">
 			</div>
 		</div>
-	<script>
-		function enlarge(wert){
-			if (wert == 1){
-				
-			}
-			else if (wert ==2) {
-				
-			} else {
-				alert("something has gone wrong!");
-			}
-		}
+	<script type="text/javascript">
+      var hoehe  = document.images.zoomblau.height;
+      var breite = document.images.zoomblau.width;
 	</script>
+	
 </body>
 </html>
