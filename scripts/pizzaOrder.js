@@ -108,7 +108,7 @@ function bestellen(){
     for ( i= 0; i < zuzaten.length; i +=1){
         if (zuzaten[i].checked) {
             z = z + " " + zuzaten[i].value + ";";
-            console.log()
+            console.log();
             if (z.length < 2){
                 alert("Sie müssen mindestens zwei Zutaten für Ihre Pizza wählen.");
                 j = false;

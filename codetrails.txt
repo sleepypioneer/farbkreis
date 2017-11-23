@@ -124,3 +124,47 @@ to determin angle of each category slice angle = 2 * PI * category value / total
 
 */
 
+
+
+Canvas spare code:
+/*//Rectangle
+c.fillStyle = "pink";
+c.fillRect(100, 100, 100, 100);
+
+console.log(canvas);
+
+//line
+c.beginPath();
+c.moveTo(50,300);
+c.lineTo(300, 100);
+c.lineTo(50, 100);
+c.lineTo(50, 300);
+c.strokeStyle = "blue";
+c.stroke();
+
+//Arc /circle
+c.arc(x: Int, y: Int, r; Int, startAngle: Float, endAngle: Float, drawCounterClockwise; bool (false));
+Math.PI * 2 full circle
+c.beginPath();
+c.arc(300,300, 30, 0, Math.PI * 2, false);
+c.stroke();*/
+
+/*for(var i= 0; i < 100; i+=1) {
+    var x = Math.random() * window.innerWidth;
+    //return random value within screen space
+    var y = Math.random() * window.innerHeight;
+    c.beginPath();
+    c.arc(x, y, 30, 0,Math.PI * 2, false);
+    c.strokeStyle= '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    c.stroke();
+}*/
+
+/*var x = Math.random() * window.innerWidth;
+var y = Math.random() * window.innerHeight;
+var dx = (Math.random() - 0.5) * 8 ; // to produce a value that is between -0.5 and 0.5
+var dy = (Math.random() - 0.5) * 8 ;
+var radius = 30;*/
+
+
+
+

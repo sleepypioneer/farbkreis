@@ -18,9 +18,9 @@ var model = {
     numShips: 3,
     shipsSunk: 0,
     shipLength: 3,
-    ships: [{locations: [0, 0,0], hits: ["", "", ""]},
-            {locations: [0, 0,0], hits: ["", "", ""]},
-            {locations: [0, 0,0], hits: ["", "", ""]}],
+    ships: [{locations: [0, 0, 0], hits: ["", "", ""]},
+            {locations: [0, 0, 0], hits: ["", "", ""]},
+            {locations: [0, 0, 0], hits: ["", "", ""]}],
     fire: function(guess) {
         for(var i = 0; i < this.numShips; i+=1) {
             var ship = this.ships[i];
@@ -51,42 +51,47 @@ var model = {
     },
     generateShipLocations: function() { //method to generate ships location and size
         var locations;
-        for (var i = 0; i > this.numShips; i +=1) {
+        for (var i = 0; i < this.numShips; i +=1) {
+            console.log(i);
+            
             do {
                 locations = this.generateShip();
-            } while (this.collosion(locations));
+            } while (this.collision(locations));
+            
             this.ships[i].locations = locations;
+            console.log(this.ships[i].locations);
         }
     },
     generateShip: function() {
-        var direction = Math.floor(Math.random() * 2) ;
+        var direction = Math.floor(Math.random() * 2);
         var row;
         var col;
         if (direction === 1) { 
             // start point for horizontal ship
             row = Math.floor(Math.random() * this.boardSize);
-            col = Math.floor(Math.random() * (this.boardSize - this.ShipLength));
+            col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
         } else  {
-            row = Math.floor(Math.random() * ( this.boardSize - this.ShipLength));
+            row = Math.floor(Math.random() * ( this.boardSize - this.shipLength));
             col = Math.floor(Math.random() * this.boardSize) ;
         }
         
         var newShipLocation = [];
-        for (var i = 0; i < this.shipLength; i +=1) {
+        for (var i = 0; i < this.shipLength; i++) {
             if (direction === 1) {
                  // positions array point for horizontal ship
-                 newShipLocations.push(row + "" + (col + i)); 
+                 newShipLocation.push(row + "" + (col + i));
             } else {
                 // positions array point for verticle ship
-            }   newShipLocation.push((row + i) + "" + col);
+               newShipLocation.push((row + i) + "" + col);
+            }
         }
-      return newShipLocations;
+        return newShipLocation;
     },
     collision: function(locations) {
         for (var i = 0; i < this.numShips; i +=1) {
             var ship = model.ships[i];
             for (var j = 0; j < locations.length; j+=1) {
-                if (ship.locations.indexOf(locations[j]) >=0) {
+                if (ship.locations.indexOf(locations[j]) >= 0) {
                     return true;
                 }
             }

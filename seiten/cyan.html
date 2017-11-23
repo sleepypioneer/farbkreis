@@ -9,20 +9,32 @@
 body {
 	background-color: #0FF;
 	margin: 0;
+	/* needed for canvas full screen */
+	width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
 }
 
 canvas {
 	border: 1px solid black;
 	background: #0FF;
+	/* needed for canvas full screen*/
+	position: absolute;
 }
+
+
 </style>
+
 </head>
 
 <body>
-	
-	<a href="../index.html"> <img id="Home" src="https://image.flaticon.com/icons/png/512/25/25694.png" alt="Home"> </a>
-	<canvas>				
+	<canvas id="myCanvas">			 <!--need canvas at top or html elements assigned space before height is calculated for canvas-->	
 	</canvas>
-	<script type="text/javascript" src="../scripts/canvas.js"></script>	
+	
+	
+	<a href="../index.html" id="on top"> <img id="Home" src="https://image.flaticon.com/icons/png/512/25/25694.png" alt="Home"> </a>
+
+<script type="text/javascript" src="../scripts/canvas.js"></script>	
 </body>
 </html>
