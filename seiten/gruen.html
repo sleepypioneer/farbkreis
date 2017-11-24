@@ -1,149 +1,83 @@
 <!doctype html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale =1.0">
-<title>Grün</title>
-<link rel="stylesheet" type="text/css" href="../styleSheets/style.css">
-<style type="text/css">
-body {
-	background-color: #009933;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;   
-    background: #d3d3d3;
-    outline: none;
-    opacity: 1;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-		background: #ff1a1a;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-		background: #ff1a1a;
-    cursor: pointer;
-}
-
-li {
-	list-style: none;
-}
-
-.title {
-	float: left;
-}
-
-h5 {
-	float: right;
-	width:45%;
-	display: inline;
-}
-
-canvas {
-	margin: 40px;
-	background: #ffff;
-}
-
-
-
-</style>
-
-</head>
-
-<body onload="refreshPiechart();">
-    <div class="main">
-			<div class ="margin1">
-			</div>
-			<div class="header">
-				<p> ersatz text </p>
-				<a href="../index.html"> ZURÜCK </a>
-			</div>
-			
-			<div class="content">
-				<canvas id="myCanvas" >
-					
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale =1.0">
+		<title>Grün</title>
+		<link rel="stylesheet" type="text/css" href="../styleSheets/style.css">
+		<link rel="stylesheet" type="text/css" href="../styleSheets/piechart.css">
+	
+	</head>
+	
+	<body onload="refreshPiechart();">
+			<div class="main">
+				<div class ="margin1">
+				</div>
+				<div class="header">
+					<p> ersatz text </p>
+					<a href="../index.html"> ZURÜCK </a>
+				</div>
 				
-				</canvas>
-			
-			<!--	<img src="../assets/imgs/clear.png" style="z-index:2" width="300px" height="300px" usemap="#image-map"/>
-					<map name="image-map" id="image-map">
-						<area target="" alt="cyan" title="cyan" href="../seiten/cyan.html" coords="0,149,20,74,75,20,150,150" shape="poly">
-						<area target="" alt="gruen" title="gruen" href="../seiten/gruen.html" coords="76,20,149,0,225,20,149,148" shape="poly">
-						<area target="" alt="gelb" title="gelb" href="../seiten/gelb.html" coords="150,150,226,20,283,73,300,149" shape="poly">
-						<area target="" alt="rot" title="rot" href="../seiten/rot.html" coords="299,151,149,149,226,280,281,223" shape="poly">
-						<area target="" alt="magenta" title="magenta" href="../seiten/magenta.html" coords="227,279,149,150,73,281,150,299" shape="poly">
-						<area target="" alt="blau" title="blau" href="../seiten/blau.html" coords="75,278,148,148,1,149,19,227" shape="poly">
-					</map> -->
-						<li>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Grün</h5>
-									<h5 id="gruenValue"></h1>
-									<input type="range" min="1" max="60" value="30" class="slider" id="gruen" onChange="refreshPiechart();">
-								</div>
-							</ul>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Gelb</h5>
-									<h5 id="gelbValue"></h1>
-									<input type="range" min="1" max="60" value="60" class="slider" id="gelb" onChange="refreshPiechart();">
-								</div>
-							</ul>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Rot</h5>
-									<h5 id="rotValue"></h1>
-									<input type="range" min="1" max="60" value="40" class="slider" id="rot" onChange="refreshPiechart();">
-								</div>
-							</ul>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Magenta</h5>
-									<h5 id="magentaValue"></h1>
-									<input type="range" min="1" max="60" value="60" class="slider" id="magenta" onChange="refreshPiechart();">
-								</div>
-							</ul>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Blau</h5>
-									<h5 id="blauValue"></h1>
-									<input type="range" min="1" max="60" value="50" class="slider" id="blau" onChange="refreshPiechart();">
-								</div>
-							</ul>
-							<ul>
-								<div id="slidecontainer">
-									<h5 class="title">Cyan</h5>
-									<h5 id="cyanValue"></h1>
-								</div>
-							</ul>					
-						</li>
-					</div>
+				<div class="content">
+					<canvas id="myCanvas" >
+						
+					
+					</canvas>
+							<li>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Grün</h5>
+										<h5 id="gruenValue"></h1>
+										<input type="range" min="1" max="60" value="30" class="slider" id="gruen" onChange="refreshPiechart();">
+									</div>
+								</ul>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Gelb</h5>
+										<h5 id="gelbValue"></h1>
+										<input type="range" min="1" max="60" value="60" class="slider" id="gelb" onChange="refreshPiechart();">
+									</div>
+								</ul>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Rot</h5>
+										<h5 id="rotValue"></h1>
+										<input type="range" min="1" max="60" value="40" class="slider" id="rot" onChange="refreshPiechart();">
+									</div>
+								</ul>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Magenta</h5>
+										<h5 id="magentaValue"></h1>
+										<input type="range" min="1" max="60" value="60" class="slider" id="magenta" onChange="refreshPiechart();">
+									</div>
+								</ul>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Blau</h5>
+										<h5 id="blauValue"></h1>
+										<input type="range" min="1" max="60" value="50" class="slider" id="blau" onChange="refreshPiechart();">
+									</div>
+								</ul>
+								<ul>
+									<div id="slidecontainer">
+										<h5 class="title">Cyan</h5>
+										<h5 id="cyanValue"></h1>
+									</div>
+								</ul>					
+							</li>
+						</div>
+				</div>
+				
+				<div class ="margin2">
+				</div>
+				<div class ="footer">
+				</div>
+				
+				<script>
+				</script>
+				<script type="text/javascript" src="../scripts/piechart.js"></script>	
 			</div>
-			
-			<div class ="margin2">
-			</div>
-			<div class ="footer">
-			</div>
-			
-			<script>
-			</script>
-			<script type="text/javascript" src="../scripts/piechart.js"></script>	
-    </div>
-  </div>
-</body>
+		</div>
+	</body>
 </html>

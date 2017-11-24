@@ -1,15 +1,14 @@
-// Canvas 
 
+/************** Canvas ***************/
 var myCanvas = document.getElementById("myCanvas");
 myCanvas.width =300;
 myCanvas.height =300;
 				
-var ctx = myCanvas.getContext("2d");
-
-var colours = {};
-// Sliders and values 
+var ctx = myCanvas.getContext("2d"),
+val;
 
 
+/************** Slider Variables ***************/
 //Gruen 
 	var sliderGruen = document.getElementById("gruen");
 	var outputGruen = document.getElementById("gruenValue");
@@ -59,20 +58,12 @@ var colours = {};
 	sliderBlau.oninput = function() {
 	outputBlau.innerHTML = this.value;
 	};
+	
+	
 
-/*Cyan 	
-	var sliderCyan = document.getElementById("cyan");
-	var outputCyan = document.getElementById("cyanValue");
-	outputCyan.innerHTML = sliderCyan.value; // Display the default slider value
-	
-	// Update the current slider value (each time you drag the slider handle)
-	sliderCyan.oninput = function() {
-	outputCyan.innerHTML = this.value;
-	};*/
-	
-	
+/************** Utility Functions ***************/	
 function changeColoursData() {	
-	colours = {
+	 var colours = {
 		"Gruen": parseInt(sliderGruen.value),
 		"Gelb": parseInt(sliderGelb.value),
 		"Red": parseInt(sliderRot.value),
@@ -85,69 +76,71 @@ function changeColoursData() {
 	return colours;
 	
 }
-
-				
+			
 /* https://code.tutsplus.com/tutorials/how-to-draw-a-pie-chart-and-doughnut-chart-using-javascript-and-html5-canvas--cms-27197 */
 
 function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
-        ctx.fillStyle = color;
-        ctx.beginPath();
-        ctx.moveTo(centerX,centerY);
-        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-        ctx.closePath();
-        ctx.fill();
+		ctx.fillStyle = color;
+		ctx.beginPath();
+		ctx.moveTo(centerX,centerY);
+		ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+		ctx.closePath();
+		ctx.fill();
 }
 
+/************** Piechart Object ***************/
 var Piechart = function(options){
-    this.options = options;
-    this.canvas = options.canvas;
-    this.ctx = this.canvas.getContext("2d");
-    this.colors = options.colors;
-    
-    this.draw = function(){
-        var total_value = 0;
-        var color_index = 0;
-        for(var categ in this.options.data) {
-            var val = this.options.data[categ];
-            total_value += val;
-        }
-        
-        var start_angle = 0;
-        for (categ in this.options.data) {
-            val = this.options.data[categ];
-            var slice_angle = 2 * Math.PI * val / total_value;
-            
-            drawPieSlice(
-                this.ctx,
-                this.canvas.width/2,
-                this.canvas.height/2,
-                Math.min(this.canvas.width/2,this.canvas.height/2),
-                start_angle,
-                start_angle+slice_angle,
-                this.colors[color_index%this.colors.length]
-            );
-            
-            start_angle += slice_angle;
-            color_index++;
-        }
-    };
-    
+	this.options = options;
+	this.canvas = options.canvas;
+	this.ctx = this.canvas.getContext("2d");
+	this.colors = options.colors;
+	
+	this.draw = function(){
+		var total_value = 0;
+		var color_index = 0;
+		for(var categ in this.options.data) {
+			val = this.options.data[categ];
+			total_value += val;
+		}
+		
+		var start_angle = 0;
+		for (categ in this.options.data) {
+			val = this.options.data[categ];
+			var slice_angle = 2 * Math.PI * val / total_value;
+			
+			drawPieSlice(
+				this.ctx,
+				this.canvas.width/2,
+				this.canvas.height/2,
+				Math.min(this.canvas.width/2,this.canvas.height/2),
+				start_angle,
+				start_angle+slice_angle,
+				this.colors[color_index%this.colors.length]
+			);
+			
+			start_angle += slice_angle;
+			color_index++;
+		}
+	};
+	
 };
 				
 
+/************** Initialize code and draw pie chart ***************/
 function refreshPiechart(){
 	var myPiechart = new Piechart(
-    {
-        canvas:myCanvas,
-        data: changeColoursData(),
-        colors: ["#009933", "#ffff4d", "#ff1a1a", "#cc0099", "#3333cc", "#00ccff"]
+	{
+		canvas:myCanvas,
+		data: changeColoursData(),
+		colors: ["#009933", "#ffff4d", "#ff1a1a", "#cc0099", "#3333cc", "#00ccff"]
 				//colours : gruen, gelb, rot, magenta, blau,cyan
-    }
+	}
 );
 
-myPiechart.draw()	
+myPiechart.draw();
 	
-};
+}
+
 
 
 

@@ -1,3 +1,6 @@
+
+/************** View ***************/
+
 var view = {
     displayMessage: function(msg) {
        var messageArea = document.getElementById("messageArea");
@@ -12,6 +15,9 @@ var view = {
         cell.setAttribute("class", "miss");
     }
 };
+
+
+/************** Model ***************/
 
 var model = {
     boardSize: 7,
@@ -102,6 +108,7 @@ var model = {
 
 
 
+/************** Controller ***************/
 var controller = {
     guesses: 0,
     
@@ -119,6 +126,9 @@ var controller = {
     }
 };
 
+
+
+/************** Utility Functions ***************/
 function parseGuess(guess) {
     var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
     if (guess === null || guess.length !== 2) {
@@ -157,6 +167,7 @@ function handleKeyPress(e) { // so that the result is returned also by the press
 }
 
 
+/************** Initialize Game ***************/
 function init() {
     view.displayMessage("GAME ON!");
     
@@ -171,8 +182,3 @@ function init() {
 
 
 window.onload = init;
-
-
-//method to create board size
-
-//fix when you rechoose a position that it is not taken again

@@ -1,9 +1,15 @@
+/************** Event Listeners ***************/
 window.addEventListener('load', changeCoords);
 window.addEventListener('resize', changeCoords);
 
-var c = document.getElementById("imageMap");
-var f = c.getBoundingClientRect().width / 1077;
-var percent = (Math.round(f*100));
+
+/************** Global Variables ***************/
+var c = document.getElementById("imageMap"),
+f = c.getBoundingClientRect().width / 1077,
+areas = document.querySelectorAll('#Map area'),
+percent = (Math.round(f*100));
+
+/************** Functions ***************/
 function dividePercent(array) {
     var i;
     var newArray = [];
@@ -13,10 +19,9 @@ function dividePercent(array) {
       newArray.push(n);
   }
   return newArray;
-
 }
+
 function changeCoords(){
-    var areas = document.querySelectorAll('#Map area'),
     i = 0;
     f = c.getBoundingClientRect().width / 1077;
     percent = (Math.round(f*100));
@@ -26,3 +31,6 @@ function changeCoords(){
         areas[i].setAttribute('coords', newCoords);
     }
 }
+
+
+

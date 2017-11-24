@@ -8,10 +8,7 @@ canvas.height = window.innerHeight;
 /***************** returns a drawing context on the canvas **********************/
 var c = canvas.getContext('2d');
 
-var mouse = {
-    x: undefined,
-    y: undefined
-};
+
 
 /***************** Event Listeners **********************/
 
@@ -40,13 +37,17 @@ var colourArray = [
     'purple',
     'magenta'
 ];
-//cooler.com good for finding colour pallets
+//coolors.co good for finding colour pallets
 
-var maxRadius = 40;
-var gravity =  1;
-var friction = 0.88;
-var circleArray = [];
-//var circle = new Circle(200, 200, 3, 3, 30);
+var maxRadius = 40,
+gravity =  1,
+friction = 0.88,
+circleArray = [],
+mouse = {
+    x: undefined,
+    y: undefined
+};
+
 
 
 /***************** Ultility Functions **********************/

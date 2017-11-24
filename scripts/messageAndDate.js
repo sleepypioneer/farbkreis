@@ -1,7 +1,11 @@
+/************** Global Variables ***************/
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
 var seconds = date.getSeconds();
+
+
+/************** function ***************/
 function hello(){
     var name = "";
     janein = confirm("Möchten Sie mir Ihren Namen verraten?");

@@ -1,79 +1,44 @@
+
+/************** Global Variables ***************/
+
+document.getElementById("abschicken").addEventListener("click", function(){
+    bestellen();
+});
+
+document.getElementById("zurucksetzen").addEventListener("click", function(){
+    clearForms();
+});
+
+
+/************** Global Variables ***************/
+
 function reveal(){
-        document.getElementById("reveal-if-active").classList.add("reveal");
-        document.getElementById("individuelle").reset();
+    document.getElementById("reveal-if-active").setAttribute('class', 'reveal');
+    document.getElementById("individuelle").reset();
 }
 
 function hideAgain(){
-        document.getElementById("reveal-if-active").classList.remove("reveal");
+    document.getElementById("reveal-if-active").removeAttribute('class');
 }
 
-/*function checkOrder(){
-    var j = false,
-    i = 0;
-    
-    //  Test, ob Groesse gewaehlt 
-    function groesseGewaehlt() {
-        for (i = 0; i < document.welchegroesse.groesse.length; i++) {
-            if(document.welchegroesse.groesse[i].checked) {
-                j = true;
-                break;
-            }
-        }
-        if (!j) {
-            alert("Sie müssen mindestens eine Option auswählen.");
-            return false;
-        }
+function clearForms(){
+    r = confirm("Wollen Sie wirklich Ihre Auswahl zurücksetzen?");
+    if (r == true) {
+        document.getElementById("groesse").reset();
+        document.getElementById("art").reset();
+        document.getElementById("individuelle").reset();
+        hideAgain();
     }
-    
-    groesseGewaehlt();
-    console.log(groesseGewaehlt());
-           
-    // Test, ob Pizza gewählt
-    function pizzaGewaehlt() {
-        for (i = 0; i < document.welcheart.art.length; i += 1) {
-            console.log("A");
-            if(document.welcheart.art[i].checked) {
-                j = true;
-                console.log("B");
-                break;
-            }
-        }
-        if (!j) {
-            alert("Sie müssen mindestens eine Option auswählen.");
-            return false;
-        }
-    
-    }
-    
-    pizzaGewaehlt();
-    console.log(pizzaGewaehlt());
-
-    // ob bei individueller Zusammenstellung mindestens zwei Zutaten gewählt
-    if (document.welcheart.art.value == 4){
-        var zuzatens = document.welcheindividuelle.individuelle;
-        var zu = [];
-        for ( i= 0; i < zuzatens.length; i +=1){
-            if (zuzatens[i].checked) {
-                zu.push(zuzatens[i].value);
-            }
-        }
-        
-        if (zu.length < 2 ) {
-            alert("Sie müssen mindestens zwei Zutaten für Ihre Pizza wählen.");
-            return false;
-        } 
-    }
-    return true;
-}*/
-
+}
 
 function bestellen(){
     var groesse = document.welchegroesse.groesse.value,
     art = document.welcheart.art.value,
-    zuzaten = document.welcheindividuelle.individuelle,
+    zuzatens = document.welcheindividuelle.individuelle,
     gr,
     a,
     j = true,
+    zu = [],
     z = "",
     i,
     date = Date();
@@ -101,18 +66,22 @@ function bestellen(){
     } else if (art == 4 && j){
         a = "individuelle";  
     }
-    
-
-        
  
-    for ( i= 0; i < zuzaten.length; i +=1){
-        if (zuzaten[i].checked) {
-            z = z + " " + zuzaten[i].value + ";";
-            console.log();
-            if (z.length < 2){
+    for ( i= 0; i < zuzatens.length; i +=1){
+         console.log("hi");
+         console.log(zuzatens.length);
+        if (zuzatens[i].checked) {
+            zu.push(zuzatens[i].value);
+            console.log(zu);
+            if (zu.length < 2){
                 alert("Sie müssen mindestens zwei Zutaten für Ihre Pizza wählen.");
                 j = false;
+            } else {
+                for (var k = 0; k < zu.length; k +=1) {
+                    z = z + "" + zuzatens[k] + ";";
+                }
             }
+            
         }
     }
     
@@ -125,14 +94,3 @@ function bestellen(){
 
 
 
-function clearForms(){
-    
-    r = confirm("Wollen Sie wirklich Ihre Auswahl zurücksetzen?");
-    if (r == true) {
-        document.getElementById("groesse").reset();
-        document.getElementById("art").reset();
-        document.getElementById("individuelle").reset();
-        document.getElementById("reveal-if-active").classList.remove("reveal");  
-    }
-    
-}

@@ -1,110 +1,109 @@
 <!doctype html>
 <html>
-<head>
+	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale =1.0">
-	<title>Gelb</title>
-<link rel="stylesheet" type="text/css" href="../styleSheets/style.css">
-	<style type="text/css">
-		body {
-			background-color: #FFFF00;
-		}
-		
-		form {
-			margin: 5%;
-		}
-		
-		.hidden {
-			visibility: hidden;
-		  }
-		  
-		.reveal {
-			visibility: visible;
-		}
-		
-	</style>
-	
-</head>
-
-<body>
-	<noscript><h3>Ohne JavaScript ist keine Pizza-Bestellung möglich!</h3></noscript>
-	<div class="main">
-			<div class ="margin1">
-			</div>
-			<div class="header">
-				<p> ersatz text </p>
-				<a href="../index.html"> ZURÜCK </a>
-				<button onclick="hello();"> CLICK ME </button>
-				<p id="message"></p>
-			</div>
+		<title>Gelb</title>
+		<link rel="stylesheet" type="text/css" href="../styleSheets/style.css">
+		<style type="text/css">
+			body {
+				background-color: #FFFF00;
+			}
 			
-			<div class="content">
+			form {
+				margin: 5%;
+			}
+			
+			.hidden {
+				visibility: hidden;
+			  }
+			  
+			.reveal {
+				visibility: visible;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<noscript><h3>Ohne JavaScript ist keine Pizza-Bestellung möglich!</h3></noscript>
+		<div class="main">
+				<div class ="margin1">
+				</div>
+				<div class="header">
+					<p> ersatz text </p>
+					<a href="../index.html"> ZURÜCK </a>
+					<button onclick="hello();"> CLICK ME </button>
+					<p id="message"></p>
+				</div>
 				
-						<div style="overflow-x:auto; text-align: left;">
-					<table>
-						<tr>
-							<h2 style="display: inline-block;">Pizza Order</h2>
-							<img src="../assets/imgs/pizza.png" width="100" height="100" style="float: left;margin: 2%; display: inline-block;"> 
-						</tr>
-						<tr>
-							<th>
-								<h3> Größe: </h3>
-							</th>
-							<th>
-								<form action="" name="welchegroesse" id="groesse">
-									<input type="radio" value="1" name="groesse">klein (20 cm)<br>
-									<input type="radio" value="2" name="groesse">mittel (26 cm)<br>
-									<input type="radio" value="3" name="groesse">groß (32 cm)<br>
-								</form>
-							</th>
-						</tr>
-						<tr>
-							<th>
-								<h3> Art der Pizza: </h3>
-							</th>
-							<th>
-								<form action="" name="welcheart" id="art" style="margin-bottom: 0px;">
-									<input type="radio" value="1" name="art" onclick="hideAgain();">Tonno (Thunfisch, Zwiebel, Knoblauch)<br>
-									<input type="radio" value="2" name="art" onclick="hideAgain();">Quattro(Salami, Schinken, Paprika, Champigons)<br>
-									<input type="radio" value="3" name="art" onclick="hideAgain();">Italia (Schinken, Artischocke, Zweibel)<br>
-									<input type="radio" value="4" name="art" onclick="reveal();">individuelle Zusammenstellung<br>		
-								</form>
-							</th>
-						</tr>
-						<tr>
-							<th>
-							</th>
-							<th>
-								<div id="reveal-if-active" class="hidden">
-									<form action="" name="welcheindividuelle" id="individuelle" style="margin-top: 0px; margin-left: 9%;">
-										<input type="checkbox" value="Salami" name="individuelle">Salami <br>
-										<input type="checkbox" value="Schinken" name="individuelle">Schinken <br>
-										<input type="checkbox" value="Champignons" name="individuelle">Champignons <br>
-										<input type="checkbox" value="Käse" name="individuelle">Käse <br>
-										<input type="checkbox" value="Peperoni" name="individuelle">Peperoni <br>
-										<input type="checkbox" value="Knoblauh" name="individuelle">Knoblauh <br>		
+				<div class="content">
+					
+							<div style="overflow-x:auto; text-align: left;">
+						<table>
+							<tr>
+								<h2 style="display: inline-block;">Pizza Order</h2>
+								<img src="../assets/imgs/pizza.png" width="100" height="100" style="float: left;margin: 2%; display: inline-block;"> 
+							</tr>
+							<tr>
+								<th>
+									<h3> Größe: </h3>
+								</th>
+								<th>
+									<form action="" name="welchegroesse" id="groesse">
+										<input type="radio" value="1" name="groesse">klein (20 cm)<br>
+										<input type="radio" value="2" name="groesse">mittel (26 cm)<br>
+										<input type="radio" value="3" name="groesse">groß (32 cm)<br>
 									</form>
-								</div>
-							</th>
-						</tr>
-						<tr>
-							<th>
-								<input type="button" value="Abschicken" onclick="bestellen();" style="display: inline-block;">
-							</th>							
-							<th>
-								<input type="button" value="Zurücksetzen" onclick="clearForms();" style="display: inline-block;">
-							</th>
-						</tr>						
-					</table>
-			</div>
-			
-			<div class ="margin2">
-			</div>
-			<div class ="footer">
-			</div>
-	</div>
-	
-	<script type="text/javascript" src="../scripts/messageAndDate.js"></script>
-	<script type="text/javascript" src="../scripts/pizzaOrder.js"></script>
-</body>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<h3> Art der Pizza: </h3>
+								</th>
+								<th>
+									<form action="" name="welcheart" id="art" style="margin-bottom: 0px;">
+										<input type="radio" value="1" name="art" onclick="hideAgain();">Tonno (Thunfisch, Zwiebel, Knoblauch)<br>
+										<input type="radio" value="2" name="art" onclick="hideAgain();">Quattro(Salami, Schinken, Paprika, Champigons)<br>
+										<input type="radio" value="3" name="art" onclick="hideAgain();">Italia (Schinken, Artischocke, Zweibel)<br>
+										<input type="radio" value="4" name="art" onclick="reveal();">individuelle Zusammenstellung<br>		
+									</form>
+								</th>
+							</tr>
+							<tr>
+								<th>
+								</th>
+								<th>
+									<div id="reveal-if-active" class="hidden">
+										<form action="" name="welcheindividuelle" id="individuelle" style="margin-top: 0px; margin-left: 9%;">
+											<input type="checkbox" value="Salami" name="individuelle">Salami <br>
+											<input type="checkbox" value="Schinken" name="individuelle">Schinken <br>
+											<input type="checkbox" value="Champignons" name="individuelle">Champignons <br>
+											<input type="checkbox" value="Käse" name="individuelle">Käse <br>
+											<input type="checkbox" value="Peperoni" name="individuelle">Peperoni <br>
+											<input type="checkbox" value="Knoblauh" name="individuelle">Knoblauh <br>		
+										</form>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<input type="button" value="Abschicken" id="abschicken" style="display: inline-block;">
+								</th>							
+								<th>
+									<input type="button" value="Zurücksetzen" id="zurucksetzen" style="display: inline-block;">
+								</th>
+							</tr>						
+						</table>
+				</div>
+				
+				<div class ="margin2">
+				</div>
+				<div class ="footer">
+				</div>
+		</div>
+		<script type="text/javascript" src="../scripts/messageAndDate.js"></script>
+		<script type="text/javascript" src="../scripts/pizzaOrder.js"></script>
+	</body>
 </html>
