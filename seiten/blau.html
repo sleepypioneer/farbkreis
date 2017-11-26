@@ -69,17 +69,7 @@
 				   </form>
 				   <img src="../assets/imgs/blau.jpg" border="10" width="300" height="300" name="zoomblau">
 			   </div>-->
-			   <div style="background-color: white;">
-					<h1 id="title"> Stopwatch </h1>
-					<h2 id="timer"> </h2>
-					<button id="startStop"> Start / Stop Reset </button>
-					<button id="reset"> Reset </button>
-					<button id="record"> Record Time </button>
-					<div id="pastTimes">
-						<h2>Past Times</h2>
-						<h5 id="times"></h5>
-					</div>
-			   </div>
+			   
 			   
 
 		   </div>
@@ -89,72 +79,7 @@
 		   <div class ="footer">
 		   </div>
 	   </div>
-		<script>
-			/************* Global Variables **************/
-			var startStopButton = document.getElementById('startStop'),
-			resetButton = document.getElementById('reset'),
-			recordButton = document.getElementById("record"),
-			time = 0,
-			interval,
-			started = false;
-			
-			/************* Event Listeners **************/
-			startStopButton.addEventListener('click', startStop);
-			resetButton.addEventListener('click', reset);
-			recordButton.addEventListener('click', record);
-			document.addEventListener('keydown', function(event) {
-				console.log(event.key);
-				if (event.key === 's') {
-				  startStop();
-				} else if (event.key === 'r') {
-				  reset();
-				} else if (event.key === 't') {
-				  record();
-				}  
-			});
-			
-			
-			/************* Functions **************/
-			function convertTime(time){
-				var hh = Math.floor(time / 3600);
-			  var mm = Math.floor((time % 3600) / 60);
-			  var ss = time % 60;
-				var convertedTime = pad(hh, 2) + ":" + pad(mm, 2) + ":" + pad(ss,2);
-				return convertedTime;
-			}
-			
-			function pad(b, width) {
-				var b = b + '';
-				return b.length >= width ? b : new Array(width - b.length + 1).join('0') + b;
-			}
-			
-			
-			function startStop() {
-			  if (started === false) {
-				interval = setInterval(function() {
-				  time +=20;
-				  document.getElementById("timer").innerHTML = convertTime(time);
-				}, 1000);
-				started = true;
-			  } else {
-				clearInterval(interval);
-				started = false;
-			  }
-			
-			}
-			
-			function reset() {
-			  clearInterval(interval);
-			  document.getElementById("timer").innerHTML = "";
-			  document.getElementById("times").innerHTML = "";
-			  time = 0;
-			}
-			
-			function record() {
-			  document.getElementById("times").innerHTML += '</br>' + convertTime(time);
-			}
 
-		</script>
 	   <!--<script type="text/javascript">
 		 var hoehe  = document.images.zoomblau.height;
 		 var breite = document.images.zoomblau.width;
