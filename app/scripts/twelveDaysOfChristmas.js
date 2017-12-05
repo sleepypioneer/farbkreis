@@ -1,4 +1,6 @@
-var DaysOfChristmas = ["A Partridge in a Pear Tree",
+/************** Global Variables ***************/
+
+const DaysOfChristmas = ["A Partridge in a Pear Tree",
                        "2 Turtle Doves",
                        "3 French Hens",
                        "4 Calling Birds",
@@ -11,118 +13,127 @@ var DaysOfChristmas = ["A Partridge in a Pear Tree",
                        "11 Pipers Piping",
                        "12 Drummers Drumming"
                        ];
-var day;
-var date = new Date(2017,11,28);
-var g = ""+ date.getMonth() + date.getDate() + "";
-console.log(g);
+let verseContainer = document.getElementById('verse'),
+imageSprite = document.getElementById('twelveDay'),
+day,
+value,
+backgroundPosition,
+verse = [],
+date = new Date(),
+g = ""+ date.getMonth() + date.getDate() + "";
+
 switch(parseInt(g)) {
     case 1125:
         value = 0;
+        day = "first";
+        backgroundPosition = "1% 0%";
+        createVerse();
         break;
     case 1126:
         value = 1;
+        day = "second";
+        backgroundPosition = "34% 0%";
+        createVerse();
         break;
     case 1127:
         value = 2;
+        day = "third";
+        backgroundPosition = "66.5% 0%";
+        createVerse();
         break;
     case 1128:
         value = 3;
+        day = "fourth";
+        backgroundPosition = "99% 0%";
+        createVerse();
         break;
     case 1129:
         value = 4;
+        day = "fifth";
+        backgroundPosition = "1% 46.5%";
+        createVerse();
         break;
     case 1130:
         value = 5;
+        day = "sixth";
+        backgroundPosition = "33% 46.5%";
+        createVerse();
         break;
     case 1131:
         value = 6;
+        day = "seventh";
+        backgroundPosition = "66% 46.5%";
+        createVerse();
         break;
     case 101:
         value = 7;
+        day = "eighth";
+        backgroundPosition = "99.5% 46.5%";
+        createVerse();
         break;
     case 102:
         value = 8;
+        day = "ninth";
+        backgroundPosition = "0.8% 46.5%";
+        createVerse();
         break;
     case 103:
         value = 9;
+        day = "tenth";
+        backgroundPosition = "33% 46.5%";
+        createVerse();
         break;
     case 104:
         value = 10;
+        day = "eleventh";
+        backgroundPosition = "65.5% 46.5%";
+        createVerse();
         break;
     case 105:
         value = 11;
-        break;    
-    default:
-       notChristmasMessage();
-}
-
-
-switch(value) {
-    case 0:
-        day = "first";
-        break;
-    case 1:
-        day = "second";
-        break;
-    case 2:
-        day = "third";
-        break;
-    case 3:
-        day = "fourth";
-        break;
-    case 4:
-        day = "fifth";
-        break;
-    case 5:
-        day = "sixth";
-        break;
-    case 6:
-        day = "seventh";
-        break;
-    case 7:
-        day = "eighth";
-        break;
-    case 8:
-        day = "ninth";
-        break;
-    case 9:
-        day = "tenth";
-        break;
-    case 10:
-        day = "eleventh";
-        break;
-    case 11:
         day = "twelfth";
+        backgroundPosition = "99.5% 96.5%";
+        createVerse();
         break;    
     default:
        notChristmasMessage();
 }
 
+/************** Functions ***************/
+function calculateDaysBetween() {
+  let cmas=new Date(date.getFullYear(), 11, 25);
+  if (date.getMonth()==11 && date.getDate()>25) {
+   cmas.setFullYear(cmas.getFullYear()+1); 
+  }
+  let oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+  let diffDays = Math.round(Math.abs((cmas.getTime() - date.getTime())/(oneDay)));
+  return diffDays + " days left until Christmas!";
+}
 
 function notChristmasMessage(){
-    console.log("It's not Christmas yet!");
+ verseContainer.innerHTML = calculateDaysBetween();
 }
 
-//var christmas = 
-
- let verse = [];
-
-function createVerse(){
-    var i,
-    DaysOfChristmas,
-    value,
-    verse;
-    if (value ===0){
+function createVerse() {
+    if (value === 0){
         verse.push(DaysOfChristmas[0]);
     } else {
-        for(i=1; i > value; i +=1){
-            console.log(verse);
-            verse.push(DaysOfChristmas[i]);
+        for(i=1; i < value; i +=1){
+            verse.push("</br>" + DaysOfChristmas[i]);
         }
-        //verse.push("and a Partridge in a Pear Tree.");   
+        verse.push("</br>and a Partridge in a Pear Tree.");   
     }
-    console.log(verse);
+    verseContainer.innerHTML = `On the ${day} of Christmas my true love sent to me: </br>${verse}`;
 }
 
-createVerse(day);
-console.log( "On the " + day + " of Christmas my true love sent to me: " + verse);
+function changeImageSprite() {
+ imageSprite.style.backgroundPosition = backgroundPosition;
+}
+
+
+/************** Init and event Listener ***************/
+function init(){
+ changeImageSprite();
+}
+
+window.addEventListener('load', init);
