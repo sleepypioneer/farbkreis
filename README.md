@@ -1,29 +1,17 @@
-# README #
+# Grow It - produce growing website for everyone
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project is an app to encourage people to grow produce themselves in the space they have, from herbs to pumpkins.
 
-### What is this repository for? ###
+Containing a plant wiki and suggestions on how to get started the app taylors suggestions to your location, compass direction & light situation,
+space available, and desired outcome (ie salad garden, herb garden, edible flowers, vegetables).
+Additional sections to be added would include tips for composting, soils, insects as well as your own grow journal and a community section.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Server
 
-### How do I get set up? ###
+A node server is used for this app. From the command line run "npm install" and then either "server.sh" if you are on a linux box or "server.bat" if you are on a windows box.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Running the application
 
-### Contribution guidelines ###
+Navigate your browser to `http://localhost:8000/` to see the app running in your browser. You may have to add the page to the url such as EventDetails.html depending on where you are at in the course. The port may be configured either in the node server or on IIS.
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
