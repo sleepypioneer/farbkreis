@@ -1,10 +1,17 @@
-# Grow It - produce growing website for everyone
+# farbkreis - portfolio of initial Javascript work at Indisoft from Oct - Dec 2017
 
-This project is an app to encourage people to grow produce themselves in the space they have, from herbs to pumpkins.
+This project is an collection of code snippets bundled together from various exercises done in my first few months at Indisoft in Berlin. Prodomently these exercises were following the O'Reilly Head first JavaScript Book: http://shop.oreilly.com/product/0636920027065.do
 
-Containing a plant wiki and suggestions on how to get started the app taylors suggestions to your location, compass direction & light situation,
-space available, and desired outcome (ie salad garden, herb garden, edible flowers, vegetables).
-Additional sections to be added would include tips for composting, soils, insects as well as your own grow journal and a community section.
+It includes:
+
+- resizeable image maps
+- HTML5 canvas built piechart
+- count down to Christmas
+- javaScript battle ships game
+- canvas pysics
+- Svg drawing
+- pizza ordering app
+
 
 ### Server
 
